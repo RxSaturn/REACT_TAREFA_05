@@ -1,8 +1,51 @@
+/**
+ * Estilos para o componente App - Dashboard de Gestão de Atividades
+ */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+/* Container principal da aplicação */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Cabeçalho do dashboard */
+.app-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+}
+
+.app-header p {
+  color: #888888;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Área principal do conteúdo */
+.app-main {
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Estilos para tema claro */
+@media (prefers-color-scheme: light) {
+  .app-header p {
+    color: #666666;
+  }
 }
 
 .logo {

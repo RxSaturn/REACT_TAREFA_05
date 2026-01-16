@@ -1,0 +1,160 @@
+/**
+ * Estilos CSS Modules para o componente TaskItem
+
+/* Estilo base para o item da tarefa */
+.taskItem {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  text-align: left;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.taskItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo de alerta para tarefas com prioridade "Alta" */
+.prioridadeAlta {
+  border: 2px solid #ff4444;
+  background-color: rgba(255, 68, 68, 0.1);
+}
+
+/* Container do cabeçalho da tarefa (título + etiqueta urgente) */
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+/* Título da tarefa */
+.taskTitulo {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ffffff;
+  flex: 1;
+}
+
+/* Etiqueta "Urgente" - visível apenas para alta prioridade e não concluído */
+.etiquetaUrgente {
+  background-color: #ff4444;
+  color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Container das informações da tarefa */
+.taskInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilo para categoria */
+.categoria {
+  background-color: #3a3a3a;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #aaaaaa;
+}
+
+/* Estilo base para prioridade */
+.prioridade {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Estilos específicos por nível de prioridade */
+.prioridadeAlta {
+  background-color: rgba(255, 68, 68, 0.2);
+  color: #ff6b6b;
+}
+
+.prioridadeMedia {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+.prioridadeBaixa {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+}
+
+/* Estilo base para status */
+.status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+/* Status concluído */
+.statusConcluido {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+}
+
+/* Status pendente */
+.statusPendente {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+/* Botão "Ver Detalhes" */
+.btnDetalhes {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #646cff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btnDetalhes:hover {
+  background-color: #5358e0;
+}
+
+/* Estilos para o tema claro */
+@media (prefers-color-scheme: light) {
+  .taskItem {
+    background-color: #f5f5f5;
+  }
+
+  .taskTitulo {
+    color: #333333;
+  }
+
+  .categoria {
+    background-color: #e0e0e0;
+    color: #666666;
+  }
+}
