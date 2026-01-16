@@ -15,6 +15,13 @@ function TaskItem({ tarefa, onVerDetalhes }) {
   // Desestruturação dos dados da tarefa para facilitar o acesso
   const { titulo, categoria, prioridade, status } = tarefa;
 
+  // Mapeamento de prioridade para classe CSS (evita problemas com caracteres acentuados)
+  const classesPrioridade = {
+    "Alta": styles.prioridadeAlta,
+    "Média": styles.prioridadeMedia,
+    "Baixa": styles.prioridadeBaixa
+  };
+
   // Verifica se a tarefa é de alta prioridade para aplicar estilo de alerta
   const ehPrioridadeAlta = prioridade === "Alta";
 
@@ -46,7 +53,7 @@ function TaskItem({ tarefa, onVerDetalhes }) {
       
       <div className={styles.taskInfo}>
         <span className={styles.categoria}>📁 {categoria}</span>
-        <span className={`${styles.prioridade} ${styles[`prioridade${prioridade}`]}`}>
+        <span className={`${styles.prioridade} ${classesPrioridade[prioridade] || ''}`}>
           📊 {prioridade}
         </span>
         <span className={`${styles.status} ${status === "concluído" ? styles.statusConcluido : styles.statusPendente}`}>
