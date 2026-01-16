@@ -1,0 +1,39 @@
+/**
+ * Estilos CSS Modules para o componente TaskList
+ */
+
+/* Container principal da lista de tarefas */
+.taskListContainer {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Título da lista */
+.titulo {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Lista de tarefas */
+.taskList {
+  padding: 0;
+  margin: 0;
+}
+
+/* Mensagem quando não há tarefas */
+.mensagemVazia {
+  text-align: center;
+  color: #888888;
+  font-size: 1rem;
+  padding: 2rem;
+}
+
+/* Estilos para tema claro */
+@media (prefers-color-scheme: light) {
+  .titulo {
+    color: #333333;
+  }
+}

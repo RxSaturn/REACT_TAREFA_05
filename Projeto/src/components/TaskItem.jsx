@@ -1,0 +1,68 @@
+/**
+ * Componente TaskItem - Representa um item individual da lista de tarefas
+ * 
+ * Responsabilidades:
+ * - Exibir informações da tarefa (título, categoria, prioridade, status)
+ * - Aplicar estilização condicional para prioridade "Alta" (CSS Modules)
+ * - Exibir etiqueta "Urgente" apenas se prioridade for "Alta" E status for diferente de "concluído"
+ * - Botão "Ver Detalhes" que aciona função recebida via props
+ */
+
+import styles from './TaskItem.module.css';
+
+// Desestruturação de props para receber os dados da tarefa e a função de callback
+function TaskItem({ tarefa, onVerDetalhes }) {
+  // Desestruturação dos dados da tarefa para facilitar o acesso
+  const { titulo, categoria, prioridade, status } = tarefa;
+
+  // Verifica se a tarefa é de alta prioridade para aplicar estilo de alerta
+  const ehPrioridadeAlta = prioridade === "Alta";
+
+  // Verifica se deve exibir a etiqueta "Urgente"
+  // Condição: prioridade "Alta" E status diferente de "concluído"
+  const exibirUrgente = ehPrioridadeAlta && status !== "concluído";
+
+  // Determina a classe CSS baseada na prioridade
+  // Se for alta prioridade, aplica classe de alerta, caso contrário usa classe normal
+  const classeItem = ehPrioridadeAlta 
+    ? `${styles.taskItem} ${styles.prioridadeAlta}` 
+    : styles.taskItem;
+
+  // Função que é chamada quando o botão "Ver Detalhes" é clicado
+  // Aciona a função recebida via props passando o objeto da tarefa
+  const handleVerDetalhes = () => {
+    onVerDetalhes(tarefa);
+  };
+
+  return (
+    <li className={classeItem}>
+      <div className={styles.taskHeader}>
+        <h3 className={styles.taskTitulo}>{titulo}</h3>
+        {/* Renderização condicional: exibe etiqueta "Urgente" apenas se as condições forem atendidas */}
+        {exibirUrgente && (
+          <span className={styles.etiquetaUrgente}>⚠️ Urgente</span>
+        )}
+      </div>
+      
+      <div className={styles.taskInfo}>
+        <span className={styles.categoria}>📁 {categoria}</span>
+        <span className={`${styles.prioridade} ${styles[`prioridade${prioridade}`]}`}>
+          📊 {prioridade}
+        </span>
+        <span className={`${styles.status} ${status === "concluído" ? styles.statusConcluido : styles.statusPendente}`}>
+          {status === "concluído" ? "✅ Concluído" : "⏳ Pendente"}
+        </span>
+      </div>
+
+      {/* Botão que aciona a função recebida via props */}
+      <button 
+        className={styles.btnDetalhes} 
+        onClick={handleVerDetalhes}
+      >
+        Ver Detalhes
+      </button>
+    </li>
+  );
+}
+
+export default TaskItem;
