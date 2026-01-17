@@ -24,11 +24,11 @@ Interface voltada para a organização de tarefas pessoais ou profissionais.
 
 ## Histórico de Commits
 
-95e9bfb Merge branch 'main' of https://github.com/RxSaturn/REACT_TAREFA_05 2026-01-16
-77170b9 Adicionei o painel de controle (Dashboard) para gerenciamento de tarefas com React. 2026-01-16
-b33eeac Adicionei a Descrição_Trabalho.md para a TAREFA 05 2026-01-16
-07b118b Inicializar a estrutura do projeto React + Vite 2026-01-16
-06a4550 Initial commit 2026-01-16
+- 95e9bfb Merge branch 'main' of https://github.com/RxSaturn/REACT_TAREFA_05 2026-01-16
+- 77170b9 Adicionei o painel de controle (Dashboard) para gerenciamento de tarefas com React. 2026-01-16
+- b33eeac Adicionei a Descrição_Trabalho.md para a TAREFA 05 2026-01-16
+- 07b118b Inicializar a estrutura do projeto React + Vite 2026-01-16
+- 06a4550 Initial commit 2026-01-16
 
 ## Screenshot
 
